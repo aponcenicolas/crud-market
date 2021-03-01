@@ -1,9 +1,6 @@
 package lux.pe.na.market.model.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.validation.constraints.NotBlank;
 
@@ -11,6 +8,7 @@ import javax.validation.constraints.NotBlank;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CategoryDto {
 
     private Long id;
@@ -18,5 +16,5 @@ public class CategoryDto {
     @NotBlank(message = "Nombre requerido")
     private String name;
 
-    private int status;
+    private boolean status;
 }

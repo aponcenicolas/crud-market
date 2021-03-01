@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface CategoryRepository extends JpaRepository<Category, Long> {
-    List<Category> findByStatus(int status);
+    List<Category> findByStatus(boolean status);
 
-    Optional<Category> findByStatusAndId(int status, Long aLong);
+    Optional<Category> findByStatusAndId(boolean status, Long aLong);
 }

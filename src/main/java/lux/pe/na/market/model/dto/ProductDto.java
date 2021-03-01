@@ -32,6 +32,6 @@ public class ProductDto {
     @Positive(message = "CategoriaId no debe ser 0")
     private Long categoryId;
 
-    private int status;
+    private boolean status;
 
 }

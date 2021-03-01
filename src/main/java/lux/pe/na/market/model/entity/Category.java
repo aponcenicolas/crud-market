@@ -24,7 +24,7 @@ public class Category {
     private String name;
 
     @Column(name = "status")
-    private int status;
+    private boolean status;
 
     @Override
     public String toString() {

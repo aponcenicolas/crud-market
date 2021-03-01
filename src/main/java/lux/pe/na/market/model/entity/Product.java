@@ -33,6 +33,6 @@ public class Product  {
     private Category category;
 
     @Column(name = "status")
-    private int status;
+    private boolean status;
 
 }

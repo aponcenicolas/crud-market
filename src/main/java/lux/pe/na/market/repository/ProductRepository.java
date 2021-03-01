@@ -9,7 +9,7 @@ import java.util.Optional;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    List<Product> findByStatus(int status);
+    List<Product> findByStatus(boolean status);
 
-    Optional<Product> findByStatusAndId(int status, Long aLong);
+    Optional<Product> findByStatusAndId(boolean status, Long aLong);
 }
