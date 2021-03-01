@@ -1,0 +1,23 @@
+server:
+  port: 8001
+
+sql-db: vet-pet-db
+sql-username: nicolas
+sql-password: "@D3scubr3"
+sql-servername: sql-database
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://${sql-servername}.database.windows.net:1433;database=${sql-db};user=${sql-username}@${sql-servername};password=${sql-password};encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30
+    password: ${sql-password}
+    username: ${sql-username}
+    initialization-mode: always
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+        format_sql: true
+    show-sql: true
+
