@@ -5,6 +5,7 @@ import lux.pe.na.market.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -31,16 +32,19 @@ public class CategoryController {
         return new ResponseEntity<>(service.grtById(id), HttpStatus.OK);
     }
 
+    @PreAuthorize("hasRole('USER')")
     @PostMapping
     public ResponseEntity<CategoryDto> save(@Valid @RequestBody CategoryDto categoryDto) {
         return new ResponseEntity<>(service.save(categoryDto), HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("/{id}")
     public ResponseEntity<CategoryDto> update(@PathVariable Long id, @Valid @RequestBody CategoryDto categoryDto) {
         return new ResponseEntity<>(service.update(id, categoryDto), HttpStatus.CREATED);
     }
 
+    @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<CategoryDto> delete(@PathVariable Long id) {
         return new ResponseEntity<>(service.delete(id), HttpStatus.NO_CONTENT);

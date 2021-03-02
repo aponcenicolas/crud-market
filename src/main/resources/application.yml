@@ -21,3 +21,7 @@ spring:
         format_sql: true
     show-sql: true
 
+jwt:
+  secret: secret
+  expiration: 3600
+
