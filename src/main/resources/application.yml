@@ -3,7 +3,7 @@ server:
 
 sql-db: vet-pet-db
 sql-username: nicolas
-sql-password: "@D3scubr3"
+sql-password: 
 sql-servername: sql-database
 
 spring:
